@@ -2,6 +2,9 @@
 
 class Users extends Model{
 
+
+    private $UserInfo;
+
     public function isLogged(){
 
         if(isset($_SESSION['luser']) && !empty($_SESSION['luser'])){
@@ -17,7 +20,7 @@ class Users extends Model{
        $sql->bindValue(":email",$email);
        $sql->bindValue(":password",md5($password));
        $sql->execute();
-       var_dump($sql);
+      
 
        if($sql->rowCount() > 0){
             $dados = $sql->fetch();
@@ -32,7 +35,32 @@ class Users extends Model{
        }
 
     }
+    public function setLoggedUser(){
 
+        if(isset($_SESSION['luser']) && !empty($_SESSION['luser'])){
+            $id = $_SESSION['luser'];
+
+            $sql = $this->pdo->prepare("SELECT * FROM users WHERE id =:id ");
+            $sql->bindValue(":id",$id);
+            $sql->execute();
+
+                    
+            if($sql->rowCount() > 0){
+           $this->UserInfo = $sql->fetch();
+
+       }
+      }
+    }
+    public function getCompany(){
+        if(isset($this->UserInfo)){
+        return $this->UserInfo['id_company'];
+        }else{
+            return 0;
+        }
+    }
+    public function getName(){
+        return $this->UserInfo['email'];
+    }
 }
 
 

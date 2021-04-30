@@ -14,7 +14,8 @@ class homeController extends controller {
     public function index() {
         $data = array();
 
-        $u = new Users(($_SESSION['luser']));
+        $u = new Users();
+        $u->setLoggedUser();
         $c = new Company($u->getCompany());
        $data['company_name'] = $c->getName();
         $this->loadTemplate('home', $data);

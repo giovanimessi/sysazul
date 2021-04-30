@@ -9,7 +9,7 @@
 </head>
 
 <body>
-home
+<?php echo $company_name;?>
  
 
 </body>
