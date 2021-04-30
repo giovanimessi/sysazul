@@ -1,0 +1,56 @@
+
+body{
+    margin: 0;
+    background-color: rgb(31, 44, 226);
+}
+.loginArea{
+width: 300px;
+height: 300px;
+background-color: rgb(91, 161, 201);
+margin: auto;
+margin-top:100px;
+align-items: center;
+border-radius: 5px;
+box-shadow: 0px 0px 10px rgb(12, 4, 43);
+padding: 15px;
+
+
+}
+.loginArea input[type=email],
+.loginArea input[type=password]{
+    width: 100%;
+    outline: 0;
+    font-size: 16px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+
+}
+.loginArea input[type=submit]{
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background-color: rgb(21, 85, 223);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+.loginArea h2{
+
+    text-align: center;
+    font-size: 30px;
+    COLOR: blue;
+}
+.warning{
+
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d68c03;
+    color: rgb(97, 81, 81);
+    margin-top: 20px;
+}
